@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder | Career Compass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="resumebuilding.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <nav>
+                
+                <a href="#" class="logo">Career<span>Compass</span></a>
+                <ul class="nav-links">
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="explorertech.html">Courses</a></li>
+                    <li><a href="interviewpre.html">Interview Prep</a></li>
+                    <li><a href="resumebuilding.html">Resume uilder</a></li>
+                </ul>
+                <button class="btn2"><a href="http://127.0.0.1:5500/#assessment">Assessment</a></button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="resume-hero">
+        <div class="container">
+            <h1>Create a Professional Resume in Minutes</h1>
+            <p>Build a job-winning resume with our easy-to-use templates and expert guidance. Get noticed by employers and land your dream job.</p>
+            <a href="#builder" class="btn">Start Building</a>
+            <a href="https://www.canva.com/resumes/templates/" class="btn btn-outline">View Templates</a>
+        </div>
+    </section>
+
+    
+    <section class="resume-templates" id="templates">
+        <div class="container">
+            <h2 class="section-title">Professional <span>Templates</span></h2>
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-img">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="template-content">
+                        <h3>Modern Professional</h3>
+                        <p>Clean, contemporary design that works for all industries</p>
+                    </div>
+                    <div class="template-footer">
+                        <span class="template-price">Free</span>
+                        <a href="https://www.creativefabrica.com/wp-content/uploads/2021/04/12/Modern-Professional-Resume-Cv-Template-Graphics-10717318-1.jpg" class="btn">Use Template</a>
+                    </div>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-img">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="template-content">
+                        <h3>Executive</h3>
+                        <p>Sophisticated design for experienced professionals</p>
+                    </div>
+                    <div class="template-footer">
+                        <span class="template-price">Free</span>
+                        <a href="https://www.resumetemplates.com/wp-content/uploads/2024/01/Executive-Resume-Templates-and-Examples-Image.png" class="btn">Use Template</a>
+                    </div>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-img">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="template-content">
+                        <h3>Creative</h3>
+                        <p>Modern design for creative industries</p>
+                    </div>
+                    <div class="template-footer">
+                        <span class="template-price">Free</span>
+                        <a href="https://s3u.tmimgcdn.com/1692467-1592630058756_Screenshot_1.jpg" class="btn">Use Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="resume-builder" id="builder">
+        <div class="container">
+            <h2 class="section-title">Build Your <span>Resume</span></h2>
+            <div class="builder-container">
+                <div class="builder-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-name">Personal</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-name">Education</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-name">Experience</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-name">Skills</div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-name">Review</div>
+                    </div>
+                </div>
+                
+                <div class="builder-content active" id="step-1">
+                    <h3>Personal Information</h3>
+                    <p>Let's start with your basic information</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="john.doe@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="City, State">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn (optional)</label>
+                        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <div></div> 
+                        <button class="btn" data-next="2">Next: Education</button>
+                    </div>
+                </div>
+                
+                <div class="builder-content" id="step-2">
+                    <h3>Education</h3>
+                    <p>Add your educational background</p>
+                    
+                    <div class="form-group">
+                        <label for="school">School/University</label>
+                        <input type="text" id="school" placeholder="University Name">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="degree">Degree</label>
+                            <input type="text" id="degree" placeholder="Bachelor of Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="field">Field of Study</label>
+                            <input type="text" id="field" placeholder="Computer Science">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="graduation">Graduation Year</label>
+                            <input type="month" id="graduation">
+                        </div>
+                        <div class="form-group">
+                            <label for="gpa">GPA (optional)</label>
+                            <input type="text" id="gpa" placeholder="3.8">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="achievements">Achievements (optional)</label>
+                        <textarea id="achievements" rows="3" placeholder="Honors, awards, relevant coursework..."></textarea>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" data-prev="1">Previous</button>
+                        <button class="btn" data-next="3">Next: Experience</button>
+                    </div>
+                </div>
+                
+                <div class="builder-content" id="step-3">
+                    <h3>Work Experience</h3>
+                    <p>Add your professional experience</p>
+                    
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="Software Engineer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" placeholder="Tech Company Inc.">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="month" id="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date</label>
+                            <input type="month" id="endDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="jobDescription">Description</label>
+                        <textarea id="jobDescription" rows="4" placeholder="Describe your responsibilities and achievements..."></textarea>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" data-prev="2">Previous</button>
+                        <button class="btn" data-next="4">Next: Skills</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-tips">
+        <div class="container">
+            <h2 class="section-title">Resume <span>Tips</span></h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Tailor Your Resume</h3>
+                    <p>Customize your resume for each job application by including keywords from the job description.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Quantify Achievements</h3>
+                    <p>Use numbers to demonstrate your impact (e.g., "Increased sales by 25%").</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-edit"></i>
+                    <h3>Keep It Concise</h3>
+                    <p>Limit your resume to 1-2 pages. Be selective about what you include.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Proofread Carefully</h3>
+                    <p>Typos and grammatical errors can eliminate you from consideration. Always proofread.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Use Action Verbs</h3>
+                    <p>Start bullet points with strong action verbs like "Managed," "Created," or "Implemented."</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-font"></i>
+                    <h3>Choose the Right Format</h3>
+                    <p>Use reverse chronological format (most recent first) unless you have specific circumstances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ats-optimization">
+        <div class="container">
+            <h2 class="section-title">ATS <span>Optimization</span></h2>
+            <div class="ats-container">
+                <h3>Make Your Resume ATS-Friendly</h3>
+                <p>Many companies use Applicant Tracking Systems (ATS) to screen resumes. Follow these tips to ensure your resume gets seen by human eyes:</p>
+                
+                <ul class="ats-checklist">
+                    <li><i class="fas fa-check"></i> Use standard section headings (e.g., "Work Experience," "Education")</li>
+                    <li><i class="fas fa-check"></i> Include keywords from the job description</li>
+                    <li><i class="fas fa-check"></i> Use a clean, simple format without tables or columns</li>
+                    <li><i class="fas fa-check"></i> Save your resume as a Word document or PDF (unless specified otherwise)</li>
+                    <li><i class="fas fa-check"></i> Use standard fonts like Arial, Calibri, or Times New Roman</li>
+                    <li><i class="fas fa-check"></i> Avoid headers and footers which can confuse ATS</li>
+                </ul>
+                
+                <div style="text-align: center;">
+                    <a href="https://resumeworded.com/upload-resume.php?sign_up_complete%3D1" class="btn">Check ATS Compatibility</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-review">
+        <div class="container">
+            <div class="review-container">
+                <h3>Get Expert Resume Feedback</h3>
+                <p>Submit your resume for a professional review and receive personalized feedback within 48 hours.</p>
+                <a href="https://resumeworded.com/upload-resume.php?sign_up_complete%3D1" class="btn">Get Resume Review</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Career Compass</h3>
+                    <p>Guiding you to your ideal career through personalized assessment and comprehensive resources.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Assessment</a></li>
+                        <li><a href="#">Interview Prep</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@careercompass.com</li>
+                        <li>Phone: (123) 456-7890</li>
+                        <li>Address: 123 Career St, Guidance City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Career Compass. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        
+        const steps = document.querySelectorAll('.step');
+        const builderContents = document.querySelectorAll('.builder-content');
+        const nextButtons = document.querySelectorAll('[data-next]');
+        const prevButtons = document.querySelectorAll('[data-prev]');
+        
+        function goToStep(stepNumber) {
+            
+            steps.forEach(step => {
+                const stepData = parseInt(step.getAttribute('data-step'));
+                step.classList.remove('active', 'completed');
+                
+                if (stepData < stepNumber) {
+                    step.classList.add('completed');
+                } else if (stepData === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+            
+            
+            builderContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `step-${stepNumber}`) {
+                    content.classList.add('active');
+                }
+            });
+        }
+        
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const nextStep = parseInt(button.getAttribute('data-next'));
+                goToStep(nextStep);
+            });
+        });
+        
+        prevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const prevStep = parseInt(button.getAttribute('data-prev'));
+                goToStep(prevStep);
+            });
+        });
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

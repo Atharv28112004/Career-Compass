@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation | Career Compass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="interviewpre.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Career<span>Compass</span></a>
+                <ul class="nav-links">
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="explorertech.html">Courses</a></li>
+                    <li><a href="interviewpre.html">Interview Prep</a></li>
+                    <li><a href="resumebuilding.html">Resume uilder</a></li>
+                </ul>
+                <button class="btn2"><a href="http://127.0.0.1:5500/#assessment">Assessment</a></button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="interview-hero">
+        <div class="container">
+            <h1>Ace Your Next Job Interview</h1>
+            <p>Prepare for success with our comprehensive interview preparation resources, practice questions, and expert tips.</p>
+            <a href="#practice" class="btn">Practice Questions</a>
+            <a href="#mock" class="btn btn-outline">Mock Interview</a>
+        </div>
+    </section>
+
+    <section class="interview-types">
+        <div class="container">
+            <h2 class="section-title">Interview <span>Types</span></h2>
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-header">
+                        <i class="fas fa-comments"></i>
+                        <h3>Behavioral Interviews</h3>
+                    </div>
+                    <div class="type-body">
+                        <ul class="type-features">
+                            <li><i class="fas fa-check"></i> Focus on past experiences</li>
+                            <li><i class="fas fa-check"></i> Assess soft skills</li>
+                            <li><i class="fas fa-check"></i> Use STAR method to answer</li>
+                            <li><i class="fas fa-check"></i> Common for all industries</li>
+                        </ul>
+                    </div>
+                    <div class="type-footer">
+                        <a href="#behavioral" class="btn">Prepare</a>
+                    </div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Technical Interviews</h3>
+                    </div>
+                    <div class="type-body">
+                        <ul class="type-features">
+                            <li><i class="fas fa-check"></i> Problem-solving questions</li>
+                            <li><i class="fas fa-check"></i> Coding challenges</li>
+                            <li><i class="fas fa-check"></i> Whiteboard sessions</li>
+                            <li><i class="fas fa-check"></i> Common in tech industry</li>
+                        </ul>
+                    </div>
+                    <div class="type-footer">
+                        <a href="#technical" class="btn">Prepare</a>
+                    </div>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-header">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Panel Interviews</h3>
+                    </div>
+                    <div class="type-body">
+                        <ul class="type-features">
+                            <li><i class="fas fa-check"></i> Multiple interviewers</li>
+                            <li><i class="fas fa-check"></i> Different perspectives</li>
+                            <li><i class="fas fa-check"></i> Maintain eye contact with all</li>
+                            <li><i class="fas fa-check"></i> Common for senior roles</li>
+                        </ul>
+                    </div>
+                    <div class="type-footer">
+                        <a href="#panel" class="btn">Prepare</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="practice-questions" id="practice">
+        <div class="container">
+            <h2 class="section-title">Practice <span>Questions</span></h2>
+            <div class="questions-container">
+                <div class="question-tabs">
+                    <div class="tab active" data-tab="behavioral">Behavioral</div>
+                    <div class="tab" data-tab="technical">Technical</div>
+                    <div class="tab" data-tab="situational">Situational</div>
+                </div>
+                
+                <div class="question-content active" id="behavioral-content">
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> Tell me about a time you faced a challenge at work and how you handled it.</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>This question assesses your problem-solving skills. Use the STAR method:</p>
+                            <ul>
+                                <li><strong>Situation:</strong> Briefly describe the context</li>
+                                <li><strong>Task:</strong> Explain what needed to be done</li>
+                                <li><strong>Action:</strong> Describe what you specifically did</li>
+                                <li><strong>Result:</strong> Share the outcome and what you learned</li>
+                            </ul>
+                            <p>Example: "In my previous role, we had a tight deadline for a project. I organized a team meeting to prioritize tasks, delegated responsibilities, and implemented daily check-ins. We completed the project on time and received positive feedback from the client."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> Describe a time you had to work with a difficult team member.</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>This question evaluates your interpersonal skills and conflict resolution abilities.</p>
+                            <p>Example: "I once worked with a colleague who frequently missed deadlines. I scheduled a private conversation to understand their challenges, offered assistance, and established clearer communication channels. This improved our collaboration and project outcomes."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-content" id="technical-content">
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> Explain the concept of object-oriented programming.</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and code. The four main principles are:</p>
+                            <ul>
+                                <li><strong>Encapsulation:</strong> Bundling data and methods that operate on that data</li>
+                                <li><strong>Abstraction:</strong> Hiding complex implementation details</li>
+                                <li><strong>Inheritance:</strong> Allowing new objects to take on properties of existing objects</li>
+                                <li><strong>Polymorphism:</strong> Allowing objects to take on many forms</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> How would you optimize a website's loading speed?</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>Website performance optimization involves several techniques:</p>
+                            <ul>
+                                <li>Minify CSS, JavaScript, and HTML</li>
+                                <li>Optimize images and use modern formats like WebP</li>
+                                <li>Implement lazy loading for images</li>
+                                <li>Reduce server response time</li>
+                                <li>Leverage browser caching</li>
+                                <li>Use a content delivery network (CDN)</li>
+                                <li>Reduce redirects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-content" id="situational-content">
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> What would you do if you were assigned multiple projects with conflicting deadlines?</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>This question tests your prioritization and time management skills.</p>
+                            <p>Example: "I would first evaluate all projects based on urgency and importance. I'd then communicate with stakeholders to negotiate deadlines if possible. If not, I'd create a detailed plan, possibly work extra hours, and if needed, request additional resources. Regular updates to all stakeholders would be essential to manage expectations."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4><i class="fas fa-question-circle"></i> How would you handle a situation where you strongly disagree with your manager's decision?</h4>
+                        <button class="answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <p>This question assesses your diplomacy and professional communication skills.</p>
+                            <p>Example: "I would request a private meeting to respectfully share my perspective, backed by data or examples. I'd focus on the business impact rather than personal opinions. Ultimately, I would support the final decision once made, while learning from the experience."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interview-tips">
+        <div class="container">
+            <h2 class="section-title">Interview <span>Tips</span></h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <i class="fas fa-research"></i>
+                    <h3>Research the Company</h3>
+                    <p>Learn about the company's mission, values, products, and recent news. This shows genuine interest and helps you tailor your answers.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-practice"></i>
+                    <h3>Practice Aloud</h3>
+                    <p>Rehearse your answers out loud to become comfortable articulating your thoughts. Practice with a friend or use a mirror.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-stories"></i>
+                    <h3>Prepare Stories</h3>
+                    <p>Have 3-5 professional stories ready that demonstrate your skills and achievements. Use the STAR method to structure them.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-questions"></i>
+                    <h3>Prepare Questions</h3>
+                    <p>Have thoughtful questions ready to ask the interviewer. This shows your interest and helps you evaluate if the role is right for you.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-time"></i>
+                    <h3>Arrive Early</h3>
+                    <p>Plan to arrive 10-15 minutes early for in-person interviews or be ready 5 minutes early for virtual interviews.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-followup"></i>
+                    <h3>Follow Up</h3>
+                    <p>Send a thank-you email within 24 hours, reiterating your interest and highlighting key points from the interview.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mock-interview" id="mock">
+        <div class="container">
+            <h2 class="section-title">Mock <span>Interview</span></h2>
+            <div class="mock-container">
+                <h3>Practice with Our AI Interview Simulator</h3>
+                <p>Get realistic interview practice with instant feedback on your answers, communication style, and presentation.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <h4>Flexible Timing</h4>
+                        <p>Practice anytime, anywhere</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-industry"></i>
+                        <h4>Industry Specific</h4>
+                        <p>Tailored to your target role</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fa-solid fa-comment" style="color: #74C0FC;"></i>
+                        <h4>Instant Feedback</h4>
+                        <p>Get detailed performance analysis</p>
+                    </div>
+                </div>
+                
+                <a href="https://bossed.ai/" class="btn">Start Mock Interview</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Career Compass</h3>
+                    <p>Guiding you to your ideal career through personalized assessment and comprehensive resources.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Assessment</a></li>
+                        <li><a href="#">Interview Prep</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@careercompass.com</li>
+                        <li>Phone: (123) 456-7890</li>
+                        <li>Address: 123 Career St, Guidance City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Career Compass. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        
+        const tabs = document.querySelectorAll('.tab');
+        const questionContents = document.querySelectorAll('.question-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                
+                questionContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${tabId}-content`) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        
+        const answerBtns = document.querySelectorAll('.answer-btn');
+        
+        answerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                
+                answer.style.display = isVisible ? 'none' : 'block';
+                btn.textContent = isVisible ? 'Show Answer' : 'Hide Answer';
+            });
+        });
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
