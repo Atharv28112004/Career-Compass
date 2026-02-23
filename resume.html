@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Information Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #3c4c5d;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #060a0e;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    h2 { text-align: center; }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: none;
+      background: #1f2933;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .submit-btn { background: #22c55e; }
+    .submit-btn:hover { background: #16a34a; }
+
+    .download-btn {
+      background: #3b82f6;
+      display: none;
+    }
+
+    .success {
+      text-align: center;
+      margin-top: 15px;
+      color: #4ade80;
+      display: none;
+    }
+    body{font-family:Arial;padding:30px;}
+    h2{border-bottom:2px solid #000;}
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Resume Information Form</h2>
+
+  <form id="resumeForm">
+    <label>Full Name</label>
+    <input type="text" name="Full Name" required>
+
+    <label>Role</label>
+    <input type="text" name="Role">
+
+    <label>Address</label>
+    <textarea name="Address"></textarea>
+
+    <label>Mobile Number</label>
+    <input type="text" name="Mobile Number">
+  
+
+    <label>Email</label>
+    <input type="email" name="Email">
+
+    <label>Education 10th</label>
+    <input type="text" name="Education 10th">
+
+    <label>Education 12th</label>
+    <input type="text" name="Education 12th">
+
+    <label>Education Degree</label>
+    <input type="text" name="Education Degree">
+
+    <label>Skills</label>
+    <textarea name="Skills"></textarea>
+
+    <label>Language Known</label>
+    <input type="text" name="Language Known">
+
+    <label>Date Of Birth</label>
+    <input type="date" name="Date Of Birth">
+
+    <label>Experience</label>
+    <input type="text" name="Experience">
+
+    <button type="submit" class="submit-btn">Submit Resume</button>
+  </form>
+
+  <div class="success" id="successMsg">✅ Resume submitted successfully!</div>
+
+  <button type="button" id="downloadBtn" class="download-btn">
+    Download Resume
+  </button>
+</div>
+
+<script>
+  const form = document.getElementById("resumeForm");
+  const successMsg = document.getElementById("successMsg");
+  const downloadBtn = document.getElementById("downloadBtn");
+  let resumeData = {};
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    resumeData = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch(
+        "http://localhost:5678/webhook/87b6d864-42c6-4897-a404-262f29e954bb",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(resumeData)
+        }
+      );
+
+      if (!response.ok) throw new Error();
+
+      successMsg.style.display = "block";
+      downloadBtn.style.display = "block";
+
+    } catch {
+      alert("❌ Error submitting form");
+    }
+  });
+
+downloadBtn.addEventListener("click", function () {
+  let resumeHTML = "";
+
+  resumeHTML += "<!DOCTYPE html><html><head><meta charset='UTF-8'>";
+  resumeHTML += "<div class='resume'>";
+  resumeHTML += "<title>" + resumeData["Full Name"] + " - Resume</title>";
+
+  resumeHTML += "<style>";
+  resumeHTML += "body{font-family:Arial;background:#f5f5f5;padding:30px;}";
+  resumeHTML += ".resume{max-width:800px;margin:auto;background:#fff;padding:30px;}";
+  resumeHTML += "h1{margin-bottom:5px;}";
+  resumeHTML += "p{margin:6px 0;}";
+  resumeHTML += "</style>";
+
+  resumeHTML += "</head><body>";
+  resumeHTML += "<div class='resume'>";
+
+  resumeHTML += "<h1>" + resumeData["Full Name"] + "</h1>";
+  resumeHTML += "<p><b>Role:</b> " + resumeData["Role"] + "</p>";
+  resumeHTML += "<p><b>Email:</b> " + resumeData["Email"] + "</p>";
+  resumeHTML += "<p><b>Mobile:</b> " + resumeData["Mobile Number"] + "</p>";
+  resumeHTML += "<p><b>Address:</b> " + resumeData["Address"] + "</p>";
+
+  resumeHTML += "<h2>Education</h2>";
+  resumeHTML += "<p>10th: " + resumeData["Education 10th"] + "</p>";
+  resumeHTML += "<p>12th: " + resumeData["Education 12th"] + "</p>";
+  resumeHTML += "<p>Degree: " + resumeData["Education Degree"] + "</p>";
+
+  resumeHTML += "<h2>Skills</h2>";
+  resumeHTML += "<p>" + resumeData["Skills"] + "</p>";
+
+  resumeHTML += "<h2>Experience</h2>";
+  resumeHTML += "<p>" + resumeData["Experience"] + "</p>";
+
+  resumeHTML += "</div>";
+  resumeHTML += "</body></html>";
+
+  const blob = new Blob([resumeHTML], { type: "text/html" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "resume.html";
+  link.click();
+  URL.revokeObjectURL(link.href);
+});
+</script>
+</body>
+</html>
