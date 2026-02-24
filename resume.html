@@ -190,8 +190,7 @@ p{margin:6px 0;}
 </div>
 </body>
 </html>`;
-
-    const blob = new Blob([resumeHTML], { type: "text/html" });
+const blob = new Blob([resumeHTML], { type: "text/html" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "resume.html";
