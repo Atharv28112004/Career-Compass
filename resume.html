@@ -256,15 +256,55 @@ nav {
   const downloadBtn = document.getElementById("downloadBtn");
   const submitBtn = document.getElementById("submitBtn");
 
-  let resumeData = {};
+  let resumeData = null;
+
+  // 🔥 NORMALIZE GEMINI OUTPUT (IMPORTANT)
+  function normalizeResume(raw, formData) {
+    const geminiText =
+      raw.professionalSummary ||
+      raw.message ||
+      raw.output?.text ||
+      raw.data ||
+      raw.text ||
+      JSON.stringify(raw);
+
+    return {
+      fullName: raw.fullName || formData["Full Name"],
+      role: raw.role || formData["Role"],
+      email: raw.email || formData["Email"],
+      mobile: raw.mobile || formData["Mobile Number"],
+      address: raw.address || formData["Address"],
+
+      professionalSummary: geminiText,
+
+      skills: raw.skills
+        ? raw.skills
+        : formData["Skills"]
+            ? formData["Skills"].split(",").map(s => s.trim())
+            : [],
+
+      experience: raw.experience
+        ? raw.experience
+        : geminiText
+            .split(".")
+            .map(l => l.trim())
+            .filter(l => l.length > 25),
+
+      education: {
+        tenth: raw.education?.tenth || formData["Education 10th"],
+        twelfth: raw.education?.twelfth || formData["Education 12th"],
+        degree: raw.education?.degree || formData["Education Degree"]
+      }
+    };
+  }
 
   form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // 🚫 NO PAGE RELOAD
+    e.preventDefault();
 
     submitBtn.disabled = true;
     submitBtn.innerText = "Submitting...";
 
-    resumeData = Object.fromEntries(new FormData(form).entries());
+    const formData = Object.fromEntries(new FormData(form).entries());
 
     try {
       const response = await fetch(
@@ -272,11 +312,17 @@ nav {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(resumeData)
+          body: JSON.stringify(formData)
         }
       );
 
       if (!response.ok) throw new Error("Webhook failed");
+
+      const rawResponse = await response.json();
+      console.log("RAW GEMINI RESPONSE:", rawResponse);
+
+      // 🔥 THIS LINE FIXES EVERYTHING
+      resumeData = normalizeResume(rawResponse, formData);
 
       successMsg.style.display = "block";
       downloadBtn.style.display = "block";
@@ -292,41 +338,61 @@ nav {
 
   downloadBtn.addEventListener("click", function () {
 
-    let resumeHTML = `
+    if (!resumeData) {
+      alert("Resume data not ready");
+      return;
+    }
+
+    const skillsHTML = resumeData.skills
+      .map(skill => `<li>${skill}</li>`)
+      .join("");
+
+    const experienceHTML = resumeData.experience
+      .map(exp => `<li>${exp}</li>`)
+      .join("");
+
+    const resumeHTML = `
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${resumeData["Full Name"]} - Resume</title>
+<title>${resumeData.fullName} - Resume</title>
 <style>
 body{font-family:Arial;background:#f5f5f5;padding:30px;}
 .resume{max-width:800px;margin:auto;background:#fff;padding:30px;}
 h1{margin-bottom:5px;}
 p{margin:6px 0;}
+ul{margin-left:20px;}
 </style>
 </head>
 <body>
 <div class="resume">
-<h1>${resumeData["Full Name"]}</h1>
-<p><b>Role:</b> ${resumeData["Role"]}</p>
-<p><b>Email:</b> ${resumeData["Email"]}</p>
-<p><b>Mobile:</b> ${resumeData["Mobile Number"]}</p>
-<p><b>Address:</b> ${resumeData["Address"]}</p>
+
+<h1>${resumeData.fullName}</h1>
+<p><b>Role:</b> ${resumeData.role}</p>
+<p><b>Email:</b> ${resumeData.email}</p>
+<p><b>Mobile:</b> ${resumeData.mobile}</p>
+<p><b>Address:</b> ${resumeData.address}</p>
+
+<h2>Professional Summary</h2>
+<p>${resumeData.professionalSummary}</p>
 
 <h2>Education</h2>
-<p>10th: ${resumeData["Education 10th"]}</p>
-<p>12th: ${resumeData["Education 12th"]}</p>
-<p>Degree: ${resumeData["Education Degree"]}</p>
+<p>10th: ${resumeData.education.tenth}</p>
+<p>12th: ${resumeData.education.twelfth}</p>
+<p>Degree: ${resumeData.education.degree}</p>
 
 <h2>Skills</h2>
-<p>${resumeData["Skills"]}</p>
+<ul>${skillsHTML}</ul>
 
 <h2>Experience</h2>
-<p>${resumeData["Experience"]}</p>
+<ul>${experienceHTML}</ul>
+
 </div>
 </body>
 </html>`;
-const blob = new Blob([resumeHTML], { type: "text/html" });
+
+    const blob = new Blob([resumeHTML], { type: "text/html" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "resume.html";
