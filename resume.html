@@ -6,20 +6,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+  --primary: #4f46e5;
+  --secondary: #6366f1;
+  --dark: #1f2937;
+}
+
+/* Navbar Background */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container */
+.container1 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Assessment Button */
+.assessment-btn {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.assessment-btn:hover {
+  opacity: 0.9;
+}
+
     body {
       font-family: Arial, sans-serif;
       background: #3c4c5d;
       color: #fff;
-      padding: 20px;
+      padding: 0px;
     }
     .container {
       max-width: 700px;
       margin: auto;
-      background: #060a0e;
+      background: #3f4a50;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
+    .container1{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+      nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
     h2 { text-align: center; }
     label {
       display: block;
@@ -59,10 +176,29 @@
     }
   </style>
 </head>
+<header class="navbar">
+  <div class="container1">
+    <nav>
+      <a href="#" class="logo">
+        Career<span>Compass</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Interview Prep</a></li>
+        <li><a href="#">Resume Builder</a></li>
+        <li><a href="#">AI Resume Builder</a></li>
+      </ul>
+
+      <a href="#" class="assessment-btn">Assessment</a>
+    </nav>
+  </div>
+</header>
 
 <body>
 
-<div class="container">
+  <div class="container">
   <h2>Resume Information Form</h2>
 
   <form id="resumeForm">
