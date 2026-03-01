@@ -184,6 +184,11 @@
         .assessment {
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
         }
+        .assessment {
+  position: relative;
+  z-index: 1;
+  margin-top: 120px;
+}
         
         .quiz-container {
             background: white;
