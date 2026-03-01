@@ -4,106 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Compass | Find Your Professional Path</title>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header>
+        <div class="container">
+            <nav>
+                
+                <a href="#" class="logo">Career<span>Compass</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                     <li><a href="explorertech.html">Courses</a></li>
+                    <li><a href="interviewpre.html">Interview Prep</a></li>
+                    <li><a href="resumebuilding.html">Resume Builder</a></li>
+                    <li><a href="resume.html">AI Resume Builder</a></li>
+                </ul>
+                <button class="btn2"><a href="http://127.0.0.1:5500/#assessment">Assessment</a></button>
+                <div class="hamburger">
+                    <i class="fas fa-bars">≡</i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">Career<span>Compass</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explorertech.html">Courses</a></li>
-                <li><a href="interviewpre.html">Interview Prep</a></li>
-                <li><a href="resumebuilding.html">Resume Builder</a></li>
-                <li><a href="resume.html">AI Resume Builder</a></li>
-            </ul>
-            <a href="#assessment" class="btn2">Assessment</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Find Your Perfect Career Path With Confidence</h1>
-                <p>Career Compass helps you discover your strengths, explore career options, and navigate your journey.</p>
-                <a href="#assessment" class="btn">Take Assessment</a>
-                <a href="#careers" class="btn btn-outline">Explore Careers</a>
-            </div>
-            <div class="hero-image">
-                <img src="career_images-removebg1.png" alt="Career Compass Illustration">
+    
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Find Your Perfect Career Path With Confidence</h1>
+                    <p>Career Compass helps you discover your strengths, explore various career options, and navigate your professional journey with personalized guidance.</p>
+                    <a href="#assessment" class="btn">Take Assessment</a>
+                    <a href="#careers" class="btn btn-outline">Explore Careers</a>
+                </div>
+                <div class="hero-image">
+                    <img src="career_images-removebg1.png" alt="Career Compass Illustration">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ================= ASSESSMENT ================= -->
-
-<section class="assessment" id="assessment">
-    <div class="container">
-        <h2 class="section-title">Career <span>Assessment</span></h2>
-
-        <div class="quiz-container">
-            <div class="quiz">
-
-                <div class="question" style="display:block;">
-                    <h3>Question 1: Which activities do you enjoy most?</h3>
-                    <div class="options">
-                        <div class="option" data-value="analytical">Solving complex problems</div>
-                        <div class="option" data-value="creative">Creating art or designs</div>
-                        <div class="option" data-value="helping">Helping people directly</div>
-                        <div class="option" data-value="leading">Organizing teams and projects</div>
+    
+    <section class="assessment" id="assessment">
+        <div class="container">
+            <h2 class="section-title">Career <span>Assessment</span></h2>
+            <div class="quiz-container">
+                <div class="quiz">
+                    <div class="question" id="question-1">
+                        <h3>Question 1: Which activities do you enjoy most?</h3>
+                        <div class="options">
+                            <div class="option" data-value="analytical">Solving complex problems</div>
+                            <div class="option" data-value="creative">Creating art or designs</div>
+                            <div class="option" data-value="helping">Helping people directly</div>
+                            <div class="option" data-value="leading">Organizing teams and projects</div>
+                        </div>
+                    </div>
+                    <div class="question" id="question-2" style="display: none;">
+                        <h3>Question 2: What is your preferred work environment?</h3>
+                        <div class="options">
+                            <div class="option" data-value="analytical">Quiet space for deep focus</div>
+                            <div class="option" data-value="creative">Flexible, inspiring space</div>
+                            <div class="option" data-value="helping">Dynamic people-centered space</div>
+                            <div class="option" data-value="leading">Fast-paced decision-making environment</div>
+                        </div>
+                    </div>
+                    <div class="question" id="question-3" style="display: none;">
+                        <h3>Question 3: Which skills do you consider your strengths?</h3>
+                        <div class="options">
+                            <div class="option" data-value="analytical">Analytical thinking and data analysis</div>
+                            <div class="option" data-value="creative">Imagination and artistic ability</div>
+                            <div class="option" data-value="helping">Empathy and communication</div>
+                            <div class="option" data-value="leading">Leadership and strategic planning</div>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-outline" id="prev-btn" style="display: none;">Previous</button>
+                        <button class="btn" id="next-btn">Next</button>
                     </div>
                 </div>
-
-                <div class="question" style="display:none;">
-                    <h3>Question 2: What is your preferred work environment?</h3>
-                    <div class="options">
-                        <div class="option" data-value="analytical">Quiet space for deep focus</div>
-                        <div class="option" data-value="creative">Flexible, inspiring space</div>
-                        <div class="option" data-value="helping">Dynamic people-centered space</div>
-                        <div class="option" data-value="leading">Fast-paced decision-making</div>
-                    </div>
+                <div class="results" id="results">
+                    <h3>Your Career Profile</h3>
+                    <p id="result-text">Based on your answers, we've identified careers that match your interests and strengths.</p>
+                    <div id="career-suggestions"></div>
+                    <button class="btn" id="retake-btn">Retake Assessment</button>
                 </div>
-
-                <div class="question" style="display:none;">
-                    <h3>Question 3: Which skills do you consider your strengths?</h3>
-                    <div class="options">
-                        <div class="option" data-value="analytical">Analytical thinking</div>
-                        <div class="option" data-value="creative">Creative imagination</div>
-                        <div class="option" data-value="helping">Empathy & communication</div>
-                        <div class="option" data-value="leading">Leadership & planning</div>
-                    </div>
-                </div>
-
-                <div class="navigation-buttons">
-                    <button class="btn btn-outline" id="prev-btn" style="display:none;">Previous</button>
-                    <button class="btn" id="next-btn">Next</button>
-                </div>
-            </div>
-
-            <div class="results" id="results" style="display:none;">
-                <h3>Your Career Profile</h3>
-                <p id="result-text"></p>
-                <div id="career-suggestions"></div>
-                <button class="btn" onclick="location.reload()">Retake Assessment</button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2023 Career Compass. All rights reserved.</p>
-    </div>
-</footer>
+    <section class="career-paths" id="careers">
+        <div class="container">
+            <h2 class="section-title">Explore <span>Career Paths</span></h2>
+            <div class="paths-grid">
+                <div class="path-card">
+                    <div class="path-image"><img src="technology10.jpg"></div>
+                    <div class="path-content">
+                        <h3>Technology</h3>
+                        <p>Software development, data science, cybersecurity, and more in the rapidly growing tech industry.</p>
+                        <a href="explorertech.html" class="btn btn-outline">Explore Tech Careers</a>
+                    </div>
+                </div>
+                <div class="path-card">
+                    <div class="path-image"><img src="graphic-1.jpg"></div>
+                    <div class="path-content">
+                        <h3>Graphic Desiner</h3>
+                        <p>A Graphic Design course focuses on teaching creativity, visual communication, and digital design skills.</p>
+                        <a href="graphicdesi.html" class="btn btn-outline">Explore Graphic Desiner Careers</a>
+                    </div>
+                </div>
+                <div class="path-card">
+                    <div class="path-image"><img src="technology9.jpg"></div>
+                    <div class="path-content">
+                        <h3>Creative Arts</h3>
+                        <p>Design, writing, film, music, and other creative professions for artistic minds.</p>
+                        <a href="creativearts.html" class="btn btn-outline">Explore Creative Careers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ✅ SCRIPT MUST BE AT END -->
-<script src="script.js"></script>
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Career <span>Resources</span></h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Resume Building</h3>
+                    <p>Create a professional resume that stands out to employers with our templates and guidance.</p>
+                    <a href="resumebuilding.html" class="btn">Explore Resources</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Interview Preparation</h3>
+                    <p>Practice common interview questions and learn strategies to impress hiring managers.</p>
+                    <a href="interviewpre.html" class="btn">Prepare for Interviews</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Skill Development</h3>
+                    <p>Find courses and learning paths to develop in-demand skills for your chosen career.</p>
+                    <a href="skilldevelopment.html" class="btn">Develop Skills</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Career Compass</h3>
+                    <p>Guiding you to your ideal career through personalized assessment and comprehensive resources.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="http://127.0.0.1:5500/#assessment">Assessment</a></li>
+                        <li><a href="allcareer.html">Career Paths</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: careercompass@gmail.com</li>
+                        <li>Phone: +91 7028158013</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Career Compass. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </body>
+    <script src="script .js"></script>
 </html>
