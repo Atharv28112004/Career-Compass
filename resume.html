@@ -166,8 +166,7 @@
 
 <!-- ===== FORM SECTION ===== -->
 <div class="container">
-  <h2>Resume Information Form</h2>
-
+  <h2 id="resumeHeading">Resume Information Form</h2>
   <form id="resumeForm">
     <label>Full Name</label>
     <input type="text" name="Full Name" required>
@@ -240,6 +239,9 @@
 
       successMsg.style.display = "block";
       downloadBtn.style.display = "block";
+
+      document.getElementById("resumeHeading").innerText =
+  resumeData["Full Name"] + " - Resume";
 
     } catch {
       alert("❌ Error submitting form");
