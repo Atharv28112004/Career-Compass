@@ -227,13 +227,16 @@
 
     try {
       const response = await fetch(
-        "http://localhost:5678/webhook/87b6d864-42c6-4897-a404-262f29e954bb",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(resumeData)
-        }
-      );
+  "http://localhost:5678/webhook/87b6d864-42c6-4897-a404-262f29e954bb",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(resumeData)
+  }
+);
+
+const result = await response.json();
+resumeData.generatedResume = result.output;
 
       if (!response.ok) throw new Error();
 
