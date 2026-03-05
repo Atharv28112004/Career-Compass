@@ -227,16 +227,13 @@
 
     try {
       const response = await fetch(
-  "http://localhost:5678/webhook/87b6d864-42c6-4897-a404-262f29e954bb",
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(resumeData)
-  }
-);
-
-const result = await response.json();
-resumeData.generatedResume = result.output;
+        "http://localhost:5678/webhook/87b6d864-42c6-4897-a404-262f29e954bb",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(resumeData)
+        }
+      );
 
       if (!response.ok) throw new Error();
 
@@ -251,133 +248,50 @@ resumeData.generatedResume = result.output;
     }
   });
 
- downloadBtn.addEventListener("click", function () {
+  downloadBtn.addEventListener("click", function () {
+    let resumeHTML = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>${resumeData["Full Name"]} - Resume</title>
+        <style>
+          body{font-family:Arial;background:#f5f5f5;padding:30px;}
+          .resume{max-width:800px;margin:auto;background:#fff;padding:30px;}
+          h1{margin-bottom:5px;}
+          p{margin:6px 0;}
+        </style>
+      </head>
+      <body>
+        <div class="resume">
+          <h1>${resumeData["Full Name"]}</h1>
+          <p><b>Role:</b> ${resumeData["Role"]}</p>
+          <p><b>Email:</b> ${resumeData["Email"]}</p>
+          <p><b>Mobile:</b> ${resumeData["Mobile Number"]}</p>
+          <p><b>Address:</b> ${resumeData["Address"]}</p>
 
-  // AI section
-  let aiSection = "";
-  if (aiResume && aiResume.trim() !== "") {
-    aiSection = `
-    <h2>Professional Summary</h2>
-    <p>${aiResume}</p>
+          <h2>Education</h2>
+          <p>10th: ${resumeData["Education 10th"]}</p>
+          <p>12th: ${resumeData["Education 12th"]}</p>
+          <p>Degree: ${resumeData["Education Degree"]}</p>
+
+          <h2>Skills</h2>
+          <p>${resumeData["Skills"]}</p>
+
+          <h2>Experience</h2>
+          <p>${resumeData["Experience"]}</p>
+        </div>
+      </body>
+      </html>
     `;
-  }
 
-  const resumeHTML = `
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>${resumeData["Full Name"]} Resume</title>
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  background:#f5f5f5;
-  padding:30px;
-}
-
-.resume{
-  max-width:800px;
-  margin:auto;
-  background:#fff;
-  padding:40px;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.header{
-  text-align:center;
-  border-bottom:2px solid #ddd;
-  padding-bottom:15px;
-  margin-bottom:20px;
-}
-
-.resume-title{
-  font-size:20px;
-  letter-spacing:2px;
-  color:#666;
-  margin-bottom:10px;
-}
-
-.name{
-  font-size:32px;
-  font-weight:bold;
-  margin:5px 0;
-}
-
-.role{
-  font-size:18px;
-  color:#444;
-}
-
-.contact{
-  color:#555;
-}
-
-h2{
-  margin-top:25px;
-  border-bottom:1px solid #ddd;
-  padding-bottom:5px;
-}
-
-p{
-  margin:6px 0;
-}
-</style>
-</head>
-
-<body>
-
-<div class="resume">
-
-<div class="header">
-<div class="resume-title">RESUME</div>
-
-<div class="name">${resumeData["Full Name"] || ""}</div>
-
-<div class="role">${resumeData["Role"] || ""}</div>
-
-<div class="contact">
-${resumeData["Email"] || ""} | ${resumeData["Mobile Number"] || ""}
-</div>
-
-<div class="contact">
-${resumeData["Address"] || ""}
-</div>
-
-</div>
-
-<h2>Education</h2>
-<p>10th : ${resumeData["Education 10th"] || ""}</p>
-<p>12th : ${resumeData["Education 12th"] || ""}</p>
-<p>Degree : ${resumeData["Education Degree"] || ""}</p>
-
-<h2>Skills</h2>
-<p>${resumeData["Skills"] || ""}</p>
-
-<h2>Experience</h2>
-<p>${resumeData["Experience"] || ""}</p>
-
-${aiSection}
-
-</div>
-
-</body>
-</html>
-`;
-
-  const blob = new Blob([resumeHTML], { type: "text/html" });
-
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "resume.html";
-
-  document.body.appendChild(link);
-  link.click();
-
-  document.body.removeChild(link);
-  URL.revokeObjectURL(link.href);
-
-});
+    const blob = new Blob([resumeHTML], { type: "text/html" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "resume.html";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
 </script>
 
 </body>
