@@ -25,7 +25,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 10px;
         }
         
         .btn {
@@ -57,9 +57,23 @@
             background: var(--primary);
             color: white;
         }
+        .login-icon{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: rgb(99, 78, 255);
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+.login-icon:hover{
+  color: #6c63ff;
+}
         
         section {
             padding: 80px 0;
+            margin-right: 10px;
         }
         
         .section-title {
