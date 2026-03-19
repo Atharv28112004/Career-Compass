@@ -60,10 +60,10 @@
         .login-icon{
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             color: rgb(99, 78, 255);
-            font-size: 24px;
+            font-size: 35px;
             font-weight: 600;
         }
 
